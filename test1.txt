@@ -1,0 +1,17 @@
+import pandas as pd
+
+# read original csv file
+df = pd.read_csv('original.csv')
+
+# select specific column
+column = df['column_name']
+
+# create a new DataFrame with only that column
+new_df = pd.DataFrame(column)
+
+# write the new DataFrame to a new csv file
+new_df.to_csv('new.csv', index=False)
+
+
+
+column = df[['column_name1','column_name2']]

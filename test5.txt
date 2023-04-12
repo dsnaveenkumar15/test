@@ -1,0 +1,31 @@
+1. Identify the opensource repository and fork it to the "publicgithub-level01" organization
+2. Clone the PGFR (Public Github Forked Repo) and change the origin to "vgithub-level02" and push it to the "vgithub-level02" repo
+
+git clone https://github.com/publicgithub-level01/Data-Structures-And-Algorithm.git
+git config --get remote.origin.url
+git branch
+
+git remote rm origin
+git remote add origin https://github.com/vgithub-level02/https-gitData-Structures-And-Algorithm.git
+git config --get remote.origin.url
+git branch
+git push origin --all
+======
+
+3. Add the PGFR as a upstream to keep "vgithub-level02" repo in snyc with PGFR 
+git remote add upstream https://github.com/publicgithub-level01/Data-Structures-And-Algorithm.git
+git pull upstream master
+git push --set-upstream origin master
+======
+
+4. Once the changes and the scans are completed again origin will be updated to PGFR and the code will be pushed
+git remote rm origin
+git remote add origin https://github.com/publicgithub-level01/Data-Structures-And-Algorithm.git
+git config --get remote.origin.url
+git branch
+git push origin --all
+=====
+5. Once everything looks good raise PR to opensource repo from PGFR
+
+Change the upstream if required
+git remote set-url upstream https://github.com/publicgithub-level01/Data-Structures-And-Algorithm.git

@@ -1,0 +1,24 @@
+import argparse
+import requests
+
+# Define a function to parse the command line arguments
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--username", required=True, help="Checkmarx API username")
+    parser.add_argument("--password", required=True, help="Checkmarx API password")
+    parser.add_argument("--client_id", required=True, help="Checkmarx API client ID")
+    return parser.parse_args()
+
+
+# Parse the command line arguments
+args = parse_args()
+
+# Use the values from the command line arguments in the payload
+payload = {
+    "Username": args.username,
+    "Password": args.password,
+    "ClientId": args.client_id
+}
+
+
+python script.py --username your_username --password your_password --client_id your_client_id

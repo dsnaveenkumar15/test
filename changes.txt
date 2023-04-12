@@ -1,0 +1,7 @@
+file%> N:\Professional\Office\DevOps\visa\abc.js
+line%> hi
+line%> naveen
+line%> how are you
+file%> N:\Professional\Office\DevOps\visa\xyz.js
+line%> I am good
+line%> Hope everything is going good

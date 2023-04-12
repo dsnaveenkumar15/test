@@ -1,0 +1,9 @@
+import pandas as pd
+
+# Read the two CSV files
+fileA = pd.read_csv("fileA.csv")
+fileB = pd.read_csv("fileB.csv")
+
+# Merge the two dataframes on specific columns and save the common rows to a new csv file
+merged_df = pd.merge(fileA, fileB, on=["column_name1", "column_name2"], how='left', indicator=True)
+merged_df[merged_df._merge == 'left_only'].drop(['_merge'], axis=1).to_csv("fileC.csv", index=False)
