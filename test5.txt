@@ -39,3 +39,17 @@ clone:
     @echo "Git password: ********"
     git clone https://$(git_user):$(git_pass)@github.com/<username>/<repo>.git
 
+
+clone:
+	@echo "Cloning repository with Git credentials:"
+	@echo "Git user: ********"
+	@echo "Git password: ********"
+	echo $(git_pass) > .git-pass && \
+	chmod 400 .git-pass && \
+	echo '#!/bin/sh' > askpass.sh && \
+	echo 'echo "username=${git_user}"' >> askpass.sh && \
+	echo 'echo "password=$(cat ${HOME}/.git-pass})"' >> askpass.sh && \
+	chmod +x askpass.sh && \
+	GIT_ASKPASS=./askpass.sh git clone https://github.com/<username>/<repo>.git
+	rm -f .git-pass askpass.sh
+
