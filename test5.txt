@@ -32,3 +32,10 @@ git remote set-url upstream https://github.com/publicgithub-level01/Data-Structu
 
 
 https://drive.google.com/file/d/1SE4L0CUECkrguQ9Rbr4XXgQ0CCYE9-_y/view?usp=sharing
+
+clone:
+    @echo "Cloning repository with Git credentials:"
+    @echo "Git user: $(git_user)"
+    @echo "Git password: ********"
+    git clone https://$(git_user):$(git_pass)@github.com/<username>/<repo>.git
+
